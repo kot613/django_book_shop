@@ -1,0 +1,21 @@
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
+
+# Common IDEs
+*.swp
+.idea/
+.buildpath
+.project
+.settings
+atlassian-ide-plugin.xml
+
+# Environments
+venv
+
+# OS
+.DS_Store
