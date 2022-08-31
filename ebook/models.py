@@ -18,7 +18,7 @@ class Author(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('ebook:person', kwargs={'slug': self.slug})
+        return reverse('author', kwargs={'slug': self.slug})
 
 
 class Publication(models.Model):
@@ -52,13 +52,13 @@ class Genre(models.Model):
         verbose_name_plural = 'Жанри'
 
     def get_absolute_url(self):
-        return reverse('ebook:genre', kwargs={'slug': self.slug})
+        return reverse('genre', kwargs={'slug': self.slug})
 
 
 class Book(models.Model):
     """ модель книги """
     name = models.CharField(max_length=255, db_index=True, verbose_name='Назва')
-    author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='book_author', verbose_name='Автори')
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name='Автор')
     publication = models.ForeignKey(Publication, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Видавництво')
     genres = models.ManyToManyField(Genre, verbose_name='Жанри', related_name='book_genre')
     year = models.PositiveSmallIntegerField(default=2022, verbose_name='Рік видання')
@@ -83,5 +83,5 @@ class Book(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('ebook:book_detail', kwargs={'slug': self.slug})
+        return reverse('book_detail', kwargs={'slug': self.slug})
 

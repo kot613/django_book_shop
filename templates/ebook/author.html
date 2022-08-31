@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <!-- Breadcrumb Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-light mb-30">
+                    <a class="breadcrumb-item text-dark" href="{% url 'home' %}">Головна</a>
+                    <span class="breadcrumb-item active">{{ author.name }}</span>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+
+    <!-- Shop Detail Start -->
+    <div class="container-fluid pb-5">
+        <div class="row px-xl-5">
+            <div class="col-lg-5 mb-30">
+                <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner bg-light">
+                        <div class="carousel-item active">
+                            <img class="w-100 h-100" src="{{ author.image.url }}" alt="{{ author.name }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7 h-auto mb-30">
+                <div class="h-100 bg-light p-30">
+                    <h3>{{ author.name }}</h3>
+                    <p class="mb-4 text-justify">
+                    {{ author.description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Shop Detail End -->
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+{% block qcontent %}
+
+    <!-- Blog Start 9 блок -->
+    <div class="blog">
+        <div class="container">
+
+            <div class="section-header text-center">
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="{{ author.image.url }}" alt="{{ author.name }}">
+                            </div>
+                            <div class="blog-content">
+                                <h2 class="blog-title text-center">{{ author.name }}</h2>
+                                <h2 class="blog-title text-center">{{ author.description }}</h2>
+                                <a href="{% url 'home' %}">Home</a>
+{% endblock qcontent %}
