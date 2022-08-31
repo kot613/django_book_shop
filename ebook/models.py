@@ -35,7 +35,7 @@ class Publication(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('ebook:book_list_by_publication', kwargs={'slug': self.slug})
+        return reverse('publication', kwargs={'slug': self.slug})
 
 
 class Genre(models.Model):

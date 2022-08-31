@@ -1,8 +1,10 @@
+from itertools import chain
+
 from django.shortcuts import render
 from django.urls import reverse
 from django.views.generic import ListView, DetailView
-
-from .models import Book, Author
+from django.db.models import Q
+from .models import Book, Author, Publication
 # Create your views here.
 
 
@@ -41,5 +43,19 @@ class AuthorDetailView(DetailView):
         return reverse('author', kwargs={'slug': self.slug})
 
 
-def base(request):
-    return render(request, 'base.html')
+class SearchResultsView(ListView):
+    template_name = 'ebook/search_results.html'
+
+    def get_queryset(self):
+        object_list = []
+        query = self.request.GET.get('q')
+        object_list.append(Book.objects.filter(Q(name__icontains=query) |
+                                               Q(description__icontains=query) |
+                                               Q(year__icontains=query)))
+        object_list.append(Author.objects.filter(Q(name__icontains=query) |
+                                                 Q(description__icontains=query)))
+        # object_list.append(Publication.objects.filter(Q(name__icontains=query)))
+        object_list = [x for x in object_list if x]
+        return object_list
+
+
