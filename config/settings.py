@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'ebook.apps.EbookConfig',
+    'newsletter.apps.NewsletterConfig',
+
+
 ]
 
 MIDDLEWARE = [
@@ -130,3 +133,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+RECAPTCHA_PUBLIC_KEY = "6Lfr678hAAAAACSDS_3ROO49K1h80zwZ4vRfcK9i"
+RECAPTCHA_PRIVATE_KEY = "6Lfr678hAAAAAIIPBIh1K3ZyPtsaP5sH83RNKXcB"
+RECAPTCHA_DEFAULT_ACTION = 'generic'
+RECAPTCHA_SCORE_THRESHOLD = 0.5
+
