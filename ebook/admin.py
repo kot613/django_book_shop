@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 from modeltranslation.admin import TranslationAdmin
-from .models import Author, Genre, Book, Publication
+from .models import Author, Genre, Book, Publication, Comment
 
 
 @admin.register(Author)
@@ -42,3 +42,9 @@ class BookAdmin(TranslationAdmin):
         return '<-_->'
 
     get_photo.short_description = 'Миниатюрка'
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'post')
+    search_fields = ('name', 'message')

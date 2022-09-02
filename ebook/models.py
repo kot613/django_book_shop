@@ -1,3 +1,4 @@
+from django.core.validators import MaxValueValidator
 from django.db import models
 from django.urls import reverse
 
@@ -82,6 +83,22 @@ class Book(models.Model):
     def __str__(self):
         return self.name
 
+    def get_comments(self):
+        return self.comments.all()
+
     def get_absolute_url(self):
         return reverse('book_detail', kwargs={'slug': self.slug})
+
+
+class Comment(models.Model):
+    name = models.CharField(max_length=50, verbose_name="Им'я")
+    message = models.TextField(max_length=500, verbose_name='Відгук')
+    create_at = models.DateTimeField(auto_now_add=True)
+    rating = models.FloatField(default=2)
+    post = models.ForeignKey(Book, related_name='comments', on_delete=models.CASCADE, verbose_name='Книжка')
+
+    class Meta:
+        verbose_name = 'Відгук'
+        verbose_name_plural = 'Відгуки'
+
 
