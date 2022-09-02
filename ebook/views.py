@@ -1,11 +1,8 @@
-from itertools import chain
-
 from django.shortcuts import render
 from django.urls import reverse
 from django.views.generic import ListView, DetailView
 from django.db.models import Q
-from .models import Book, Author, Publication
-# Create your views here.
+from .models import Book, Author
 
 
 class BookListView(ListView):
@@ -21,6 +18,7 @@ class BookListView(ListView):
 class BookDetailView(DetailView):
     model = Book
     context_object_name = 'book'
+
 
     # def get_context_data(self, **kwargs):
     #     context = super().get_context_data(**kwargs)
@@ -57,5 +55,6 @@ class SearchResultsView(ListView):
         # object_list.append(Publication.objects.filter(Q(name__icontains=query)))
         object_list = [x for x in object_list if x]
         return object_list
+
 
 

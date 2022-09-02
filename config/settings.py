@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-)_4r%jfp*xr8$h)6$(reh+dse3x7b(l4b(m72geku(577t4mx9'
-
+CART_SESSION_ID = 'wqeqweqweqw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     'ebook.apps.EbookConfig',
     'newsletter.apps.NewsletterConfig',
+    'basket.apps.BasketConfig',
 
 
 ]
@@ -66,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'basket.context_processors.basket',
             ],
         },
     },
@@ -108,11 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
 LANGUAGE_CODE = 'uk'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
 
@@ -134,8 +133,7 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-RECAPTCHA_PUBLIC_KEY = "6Lfr678hAAAAACSDS_3ROO49K1h80zwZ4vRfcK9i"
-RECAPTCHA_PRIVATE_KEY = "6Lfr678hAAAAAIIPBIh1K3ZyPtsaP5sH83RNKXcB"
-RECAPTCHA_DEFAULT_ACTION = 'generic'
-RECAPTCHA_SCORE_THRESHOLD = 0.5
+
+
+
 

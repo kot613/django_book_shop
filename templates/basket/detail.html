@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Breadcrumb Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-light mb-30">
+                    <a class="breadcrumb-item text-dark" href="{% url 'home' %}">Головна</a>
+                    <span class="breadcrumb-item active">Ваш кошик</span>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+
+    <!-- Cart Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-lg-8 table-responsive mb-5">
+                <table class="table table-light table-borderless table-hover text-center mb-0">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Назва</th>
+                        <th>Ціна</th>
+                        <th>Кількість</th>
+                        <th>Загальна вартість</th>
+                        <th>Видалити</th>
+                    </tr>
+                    </thead>
+                    <tbody class="align-middle">
+                    {% for item in basket %}
+                        {% with product=item.product %}
+                            <tr>
+                                <td class="align-middle"><img src="
+                                        {% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}"
+                                                              alt="{{ product.name }}"
+                                                              style="width: 50px;">{{ product.name }}</td>
+                                <td class="align-middle">₴{{ item.price }}</td>
+                                <td class="align-middle">
+                                    <div class="input-group quantity mx-auto" style="width: 100px;">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-primary btn-minus"
+                                                    onclick="location.href='{% url 'add_basket' product.id %}?quantity=-1'">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        <input type="text"
+                                               class="form-control form-control-sm bg-secondary border-0 text-center"
+                                               value="{{ item.quantity }}">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-primary btn-plus"
+                                                    onclick="location.href='{% url 'add_basket' product.id %}?quantity=1'">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="align-middle">₴{{ item.total_price }}</td>
+                                <td class="align-middle">
+                                    <button class="btn btn-sm btn-danger"
+                                            onclick="location.href='{% url 'remove_basket' product.id %}'"><i
+                                            class="fa fa-times"></i></button>
+                                </td>
+                            </tr>
+                        {% endwith %}
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-4">
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Всього у кошику</span>
+                </h5>
+                <div class="bg-light p-30 mb-5">
+                    <div class="border-bottom pb-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6>Сума замовлення</h6>
+                            <h6>₴ {{ basket.get_total_price }}</h6>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-medium">Доставка</h6>
+                            <h6 class="font-weight-medium">₴ 0</h6>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <div class="d-flex justify-content-between mt-2">
+                            <h5>Разом</h5>
+                            <h5>₴ {{ basket.get_total_price }}</h5>
+                        </div>
+                        <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Оформити замовлення
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cart End -->
+
+{% endblock %}
+
