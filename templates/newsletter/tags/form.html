@@ -1,17 +1,18 @@
+{% load i18n %}
 <div class="col-lg-4 col-md-6 mb-5 pr-3 pr-xl-5">
-    <h5 class="text-secondary text-uppercase mb-4">Новинки</h5>
-    <p class="text-justify"> Якщо бажаєте отримувати новини першими, підпишіться на нас</p>
+    <h5 class="text-secondary text-uppercase mb-4">{% trans 'Новинки' %}</h5>
+    <p class="text-justify"> {% trans 'Якщо бажаєте отримувати новини першими, підпишіться на нас' %}</p>
     <form action="{% url 'newslatter' %}" method="post">
         <div class="input-group">
             {% csrf_token %}
             {{ newsletter_form.email }}
             <div class="input-group-append">
-                <button class="btn btn-primary">Підписатися</button>
+                <button class="btn btn-primary">{% trans 'Підписатися' %}</button>
             </div>
         </div>
     </form>
 
-    <h6 class="text-secondary text-uppercase mt-4 mb-3">Слідкувати за нами</h6>
+    <h6 class="text-secondary text-uppercase mt-4 mb-3">{% trans 'Слідкувати за нами' %}</h6>
     <div class="d-flex">
         <a class="btn btn-primary btn-square mr-2" href="https://www.youtube.com/channel/UC74YRjoOXfZmM2YIdeKwurQ"><i
                 class="fab fa-youtube"></i></a>

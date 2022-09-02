@@ -1,0 +1,357 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-03 01:20+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\_footer.html:6
+msgid "Переваги покупки в нашому магазині"
+msgstr "Advantages of shopping in our store"
+
+#: .\templates\_footer.html:8
+msgid ""
+"Ми знаємо всі наші книги і знайомі вони нам не тільки по красивих "
+"обкладинках."
+msgstr ""
+"We know all our books and we know them not only because they are "
+"beautifulcovers."
+
+#: .\templates\_footer.html:9
+msgid ""
+"Якщо вам важко у виборі новинки та ви не можете визначитися у величезному "
+"асортименті, наші консультанти"
+msgstr ""
+"If you have a hard time choosing a new product and you can't decide on a "
+"hugeassortments, our consultants"
+
+#: .\templates\_footer.html:10
+msgid "прийдуть на допомогу."
+msgstr "will come to help."
+
+#: .\templates\_footer.html:11
+msgid ""
+"Всі продавці розділяють любов до друкованого слова і раді порадити саме ту"
+msgstr ""
+"All sellers share a love of the printed word and are happy to recommend that particular one"
+
+#: .\templates\_footer.html:12
+msgid ""
+"книгу, яку ви шукаєте. Наш кол-центр працює на сайті 7 днів на тиждень з "
+"8:00 до 21:00. Ми готові"
+msgstr ""
+"the book you are looking for. Our call center is open 7 days a week from "
+"8:00 a.m. to 9:00 p.m. We are ready"
+
+#: .\templates\_footer.html:13
+msgid "проконсультувати вас з усіх питань, включаючи і вартість видань."
+msgstr "to advise you on all issues, including the cost of publications."
+
+#: .\templates\_footer.html:15
+msgid "Наша адреса, Україна"
+msgstr "Our address, Ukraine"
+
+#: .\templates\_footer.html:29 .\templates\basket\detail.html:3
+#: .\templates\ebook\author.html:3 .\templates\ebook\book_detail.html:3
+#: .\templates\ebook\book_list.html:3 .\templates\ebook\search_results.html:3
+msgid "Книгарня"
+msgstr "Bookstore"
+
+#: .\templates\_footer.html:30
+msgid "Усі права захищено."
+msgstr "All rights reserved."
+
+#: .\templates\_footer.html:32
+msgid "Вільний доступ"
+msgstr "Free access"
+
+#: .\templates\_header.html:10
+msgid "Книгарня -  інтернет-магазин книг."
+msgstr "Bookstore - online book store."
+
+#: .\templates\_header.html:11
+msgid "Купити книги в магазині за найкращими цінами в Україні"
+msgstr "Buy books in the store at the best prices in Ukraine"
+
+#: .\templates\_header.html:61 .\templates\_header.html:127
+msgid "Книг"
+msgstr "Book"
+
+#: .\templates\_header.html:62 .\templates\_header.html:128
+msgid "арня"
+msgstr "store"
+
+#: .\templates\_header.html:68
+msgid "Шукати"
+msgstr "Search"
+
+#: .\templates\_header.html:82
+msgid "Мій аккаунт"
+msgstr "My account"
+
+#: .\templates\_header.html:85
+msgid "Війти"
+msgstr "Sign in"
+
+#: .\templates\_header.html:86
+msgid "Вийти"
+msgstr "Sign out"
+
+#: .\templates\_header.html:89 .\templates\ebook\book_detail.html:115
+msgid "Мова"
+msgstr "Language"
+
+#: .\templates\_header.html:135 .\templates\basket\detail.html:11
+#: .\templates\ebook\author.html:13 .\templates\ebook\book_detail.html:12
+msgid "Головна"
+msgstr "Home"
+
+#: .\templates\basket\detail.html:3
+msgid "Кошик"
+msgstr "Basket"
+
+#: .\templates\basket\detail.html:12
+msgid "Ваш кошик"
+msgstr "Your shopping cart"
+
+#: .\templates\basket\detail.html:27
+msgid "Назва"
+msgstr "Name"
+
+#: .\templates\basket\detail.html:28
+msgid "Ціна"
+msgstr "Price"
+
+#: .\templates\basket\detail.html:29
+msgid "Кількість"
+msgstr "Quantity "
+
+#: .\templates\basket\detail.html:30
+msgid "Загальна вартість"
+msgstr "Total cost"
+
+#: .\templates\basket\detail.html:31
+msgid "Видалити"
+msgstr "Remove"
+
+#: .\templates\basket\detail.html:43 .\templates\basket\detail.html:63
+#: .\templates\basket\detail.html:83 .\templates\basket\detail.html:87
+#: .\templates\basket\detail.html:93 .\templates\ebook\book_detail.html:58
+msgid "₴"
+msgstr "₴"
+
+#: .\templates\basket\detail.html:77
+msgid "Всього у кошику"
+msgstr "Total in cart"
+
+#: .\templates\basket\detail.html:82
+msgid "Сума замовлення"
+msgstr "Order amount"
+
+#: .\templates\basket\detail.html:86
+msgid "Доставка"
+msgstr "Delivery"
+
+#: .\templates\basket\detail.html:92
+msgid "Разом"
+msgstr "Together"
+
+#: .\templates\basket\detail.html:95
+msgid "Оформити замовлення"
+msgstr "To order"
+
+#: .\templates\ebook\author.html:3 .\templates\ebook\book_detail.html:99
+msgid "Автор"
+msgstr "Author"
+
+#: .\templates\ebook\book_detail.html:3 .\templates\ebook\book_list.html:3
+msgid "Детально"
+msgstr "In detail"
+
+#: .\templates\ebook\book_detail.html:55
+msgid "Відгуки"
+msgstr "Reviews"
+
+#: .\templates\ebook\book_detail.html:61
+msgid "Видавництво:"
+msgstr "Publisher:"
+
+#: .\templates\ebook\book_detail.html:66
+msgid "Рік видання:"
+msgstr "Year of publication:"
+
+#: .\templates\ebook\book_detail.html:71
+msgid "Купити"
+msgstr "Buy"
+
+#: .\templates\ebook\book_detail.html:80
+msgid "Опис"
+msgstr "Description"
+
+#: .\templates\ebook\book_detail.html:81 .\templates\ebook\book_detail.html:95
+msgid "Характеристики"
+msgstr "Characteristics"
+
+#: .\templates\ebook\book_detail.html:82
+msgid "Коментарі"
+msgstr "Comments"
+
+#: .\templates\ebook\book_detail.html:87
+msgid "Про книжку"
+msgstr "About the book"
+
+#: .\templates\ebook\book_detail.html:103
+msgid "Видавництво"
+msgstr "Publishing house"
+
+#: .\templates\ebook\book_detail.html:107
+msgid "Жанр"
+msgstr "Genre"
+
+#: .\templates\ebook\book_detail.html:119
+msgid "Рік видання"
+msgstr "Year of publication"
+
+#: .\templates\ebook\book_detail.html:123
+msgid "Кількість сторінок"
+msgstr "Number of pages"
+
+#: .\templates\ebook\book_detail.html:127
+msgid "Формат"
+msgstr "Format"
+
+#: .\templates\ebook\book_detail.html:165
+msgid "Залиште відгук"
+msgstr "Leave a review"
+
+#: .\templates\ebook\book_detail.html:168
+msgid "Ваш рейтинг * :"
+msgstr "Your rating * :"
+
+#: .\templates\ebook\book_detail.html:179
+msgid "Ваш відгук *"
+msgstr "Your review *"
+
+#: .\templates\ebook\book_detail.html:184
+msgid "Ваше ім'я *"
+msgstr "Your name *"
+
+#: .\templates\ebook\book_detail.html:192
+msgid "Залишити відгук"
+msgstr "Leave a review"
+
+#: .\templates\ebook\search_results.html:3
+msgid "Пошук"
+msgstr "Search"
+
+#: .\templates\ebook\search_results.html:3
+msgid "результати"
+msgstr "the results"
+
+#: .\templates\ebook\search_results.html:7
+msgid "Результати пошуку"
+msgstr "Search Results"
+
+#: .\templates\ebook\search_results.html:23
+msgid "Нічого не знайдено"
+msgstr "Nothing found"
+
+#: .\templates\newsletter\tags\form.html:3
+msgid "Новинки"
+msgstr "Novelty"
+
+#: .\templates\newsletter\tags\form.html:4
+msgid "Якщо бажаєте отримувати новини першими, підпишіться на нас"
+msgstr "If you want to be the first to receive news, subscribe to us"
+
+#: .\templates\newsletter\tags\form.html:10
+msgid "Підписатися"
+msgstr "Subscribe to us"
+
+#: .\templates\newsletter\tags\form.html:15
+msgid "Слідкувати за нами"
+msgstr "Follow us"
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:221
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:207
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:222
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a> is in your settings file and you have not configured any "
+"URLs."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:230
+msgid "Django Documentation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:231
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:239
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:240
+msgid "Get started with Django"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:248
+msgid "Django Community"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:249
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "                Ми знаємо всі наші книги і знайомі вони нам не тільки по "
+#~ "красивих обкладинках.\n"
+#~ "                Якщо вам важко у виборі новинки та ви не можете "
+#~ "визначитися у величезному асортименті, наші консультанти\n"
+#~ "                прийдуть на допомогу. Всі продавці розділяють любов до "
+#~ "друкованого слова і раді порадити саме ту\n"
+#~ "                книгу, яку ви шукаєте. Наш кол-центр працює на сайті 7 "
+#~ "днів на тиждень з 8:00 до 21:00. Ми готові\n"
+#~ "                проконсультувати вас з усіх питань, включаючи і вартість "
+#~ "видань.\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "                We know all our books and they are familiar to us not "
+#~ "only by beautiful covers.\n"
+#~ "                If you have a hard time choosing a new product and you "
+#~ "can't decide in a huge assortment, our consultants\n"
+#~ "                will come to help. All sellers share the loveto the "
+#~ "printed word and I am glad to advise that one\n"
+#~ "                the book you are looking for. Our call center works on "
+#~ "the site 7 days for a week from 8:00 a.m. to 9:00 p.m. We are ready\n"
+#~ "                to advise you on all matters, including costedition.\n"
+#~ "            "

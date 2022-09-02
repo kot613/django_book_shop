@@ -1,5 +1,6 @@
 from django import forms
 from .models import Newsletter
+from django.utils.translation import gettext as _
 
 
 class EmailForm(forms.ModelForm):
@@ -8,4 +9,4 @@ class EmailForm(forms.ModelForm):
     class Meta:
         model = Newsletter
         fields = ('email',)
-        widgets = {'email': forms.TextInput(attrs={'class': "form-control", 'placeholder': "Ваша e-пошта"})}
+        widgets = {'email': forms.TextInput(attrs={'class': "form-control", 'placeholder': "E-mail"})}

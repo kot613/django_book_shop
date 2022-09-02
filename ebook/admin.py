@@ -1,11 +1,11 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-
+from modeltranslation.admin import TranslationAdmin
 from .models import Author, Genre, Book, Publication
 
 
 @admin.register(Author)
-class AuthorAdmin(admin.ModelAdmin):
+class AuthorAdmin(TranslationAdmin):
     list_display = ['name', 'slug', 'show_image']
     prepopulated_fields = {'slug': ('name',)}
 
@@ -18,19 +18,19 @@ class AuthorAdmin(admin.ModelAdmin):
 
 
 @admin.register(Publication)
-class PublicationAdmin(admin.ModelAdmin):
+class PublicationAdmin(TranslationAdmin):
     list_display = ['name', 'slug']
     prepopulated_fields = {'slug': ('name',)}
 
 
 @admin.register(Genre)
-class GenreAdmin(admin.ModelAdmin):
+class GenreAdmin(TranslationAdmin):
     list_display = ['name', 'slug']
     prepopulated_fields = {'slug': ('name',)}
 
 
 @admin.register(Book)
-class BookAdmin(admin.ModelAdmin):
+class BookAdmin(TranslationAdmin):
     list_display = ['name', 'author', 'language', 'price', 'availability', 'get_photo', 'slug']
     list_filter = ['availability', 'author', 'genres', 'publication']
     list_editable = ['price', 'availability']

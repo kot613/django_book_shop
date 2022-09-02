@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +7,8 @@
     <link href="{% static 'ebook/img/favicon.png' %}" rel="icon">
     <title>
         {% block title %}
-            {% if title %}{{ title }}{% else %} Книгарня -  інтернет-магазин книг.
-                Купити книги в магазині за найкращими цінами в Україні{% endif %}
+            {% if title %}{{ title }}{% else %} {% trans 'Книгарня -  інтернет-магазин книг.' %}
+                {% trans 'Купити книги в магазині за найкращими цінами в Україні' %}{% endif %}
         {% endblock %}
     </title>
 
@@ -34,7 +34,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{% static 'ebook/css/style.css' %}" rel="stylesheet">
- </head>
+</head>
 
 <body>
 
@@ -58,16 +58,17 @@
     <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
         <div class="col-lg-4">
             <a href="{% url 'home' %}" class="text-decoration-none">
-                <span class="h1 text-uppercase text-primary bg-dark px-2">Книг</span>
-                <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">арня</span>
+                <span class="h1 text-uppercase text-primary bg-dark px-2">{% trans 'Книг' %}</span>
+                <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">{% trans 'арня' %}</span>
             </a>
         </div>
         <div class="col-lg-4 col-6 text-left">
             <form action="{% url 'search_results' %}" method="get">
                 <div class="input-group">
-                    <input name="q" type="text" class="form-control" placeholder="Шукати">
+                    <input name="q" type="text" class="form-control" placeholder="{% trans 'Шукати' %}">
                     <div class="input-group-append">
-                        <button type="submit" class="btn btn-primary btn-square mr-2" ><i class="fa fa-search"></i></button>
+                        <button type="submit" class="btn btn-primary btn-square mr-2"><i class="fa fa-search"></i>
+                        </button>
                     </div>
                 </div>
             </form>
@@ -78,27 +79,25 @@
             <div class="d-inline-flex align-items-center">
                 <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">
-                        Мій аккаунт
+                        {% trans 'Мій аккаунт' %}
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <button class="dropdown-item" type="button">Війти</button>
-                        <button class="dropdown-item" type="button">Вийти</button>
+                        <button class="dropdown-item" type="button">{% trans 'Війти' %}</button>
+                        <button class="dropdown-item" type="button">{% trans 'Вийти' %}</button>
                     </div>
-                </div>
-                <div class="btn-group mx-2">
-                    <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Кеш
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <button class="dropdown-item" type="button">$ Долар</button>
-                        <button class="dropdown-item" type="button">₴ Гривня</button>
-                    </div>
-                </div>
                 <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Мова
+                    <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">{% trans 'Мова' %}
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <button class="dropdown-item" type="button">Англійська</button>
-                        <button class="dropdown-item" type="button">Українська</button>
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                            <button class="dropdown-item" value="{{ language.code }}" type="button"
+                                    onclick="location.href='/{{ language.code }}'">
+                                {{ language.name_local }} ({{ language.code }})
+                            </button>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -125,17 +124,16 @@
         <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
                 <a href="{% url 'home' %}" class="text-decoration-none d-block d-lg-none">
-                    <span class="h1 text-uppercase text-dark bg-light px-2">Книг</span>
-                    <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">арня</span>
+                    <span class="h1 text-uppercase text-dark bg-light px-2">{% trans 'Книг' %}</span>
+                    <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">{% trans 'арня' %}</span>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="{% url 'home' %}" class="nav-item nav-link active">Головна</a>
+                        <a href="{% url 'home' %}" class="nav-item nav-link active">{% trans 'Головна' %}</a>
                         <a href="shop.html" class="nav-item nav-link">Shop</a>
-                        <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i
                                     class="fa fa-angle-down mt-1"></i></a>
@@ -144,10 +142,8 @@
                                 <a href="checkout.html" class="dropdown-item">Checkout</a>
                             </div>
                         </div>
-                        <a href="#" class="nav-item nav-link">Про нас</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-
 
 
                         <a href="{% url 'detail_basket' %}" class="btn px-0 ml-3">

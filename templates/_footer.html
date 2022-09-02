@@ -1,15 +1,18 @@
-{% load newsletter_tags %}
+{% load newsletter_tags i18n %}
 <!-- Footer Start -->
 <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
     <div class="row px-xl-5 pt-5">
         <div class="col-lg-8 col-md-12 mb-5 pr-3 pr-xl-5">
-            <h5 class="text-secondary text-uppercase mb-4">Переваги покупки в нашому магазині</h5>
-            <p class="mb-4 text-justify">Ми знаємо всі наші книги і знайомі вони нам не тільки по красивих обкладинках.
-                Якщо вам важко у виборі новинки та ви не можете визначитися у величезному асортименті, наші консультанти
-                прийдуть на допомогу. Всі продавці Yakaboo розділяють любов до друкованого слова і раді порадити саме ту
-                книгу, яку ви шукаєте. Наш кол-центр працює на сайті 7 днів на тиждень з 8:00 до 21:00. Ми готові
-                проконсультувати вас з усіх питань, включаючи і вартість видань.</p>
-            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Наша адреса, Україна</p>
+            <h5 class="text-secondary text-uppercase mb-4">{% trans 'Переваги покупки в нашому магазині' %}</h5>
+            <p class="mb-4 text-justify">
+                {% trans 'Ми знаємо всі наші книги і знайомі вони нам не тільки по красивих обкладинках.' %}
+                {% trans 'Якщо вам важко у виборі новинки та ви не можете визначитися у величезному асортименті, наші консультанти' %}
+                {% trans 'прийдуть на допомогу.' %}
+                {% trans 'Всі продавці розділяють любов до друкованого слова і раді порадити саме ту' %}
+                {% trans 'книгу, яку ви шукаєте. Наш кол-центр працює на сайті 7 днів на тиждень з 8:00 до 21:00. Ми готові' %}
+                {% trans 'проконсультувати вас з усіх питань, включаючи і вартість видань.' %}
+            </p>
+            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>{% trans 'Наша адреса, Україна' %}</p>
             <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
             <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>0 800 500 021</p>
         </div>
@@ -23,10 +26,10 @@
     <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
         <div class="col-md-12 px-xl-2">
             <p class="mb-md-0 text-center text-md-left text-secondary">
-                &copy; <a class="text-primary" href="#">Книгарня</a>
-                2020 - {% now "Y" %}. Усі права захищено. Designed
+                &copy; <a class="text-primary" href="#">{% trans 'Книгарня' %}</a>
+                2020 - {% now "Y" %}. {% trans 'Усі права захищено.' %} Designed
                 by
-                <a class="text-primary" href="https://htmlcodex.com"> Вільний доступ</a>
+                <a class="text-primary" href="https://htmlcodex.com"> {% trans 'Вільний доступ' %}</a>
             </p>
         </div>
     </div>

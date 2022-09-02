@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Книгарня' %} :: {% trans 'Пошук' %} :: {% trans 'результати' %}{% endblock %}
 {% block content %}
     {% if object_list %}
         <div class="container-fluid pt-5 pb-3">
-            <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Результати пошуку</span>
+            <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">{% trans 'Результати пошуку' %}</span>
             </h2>
             <div class="px-xl-5">
                 {% for queryset in object_list %}
@@ -18,7 +20,7 @@
     {% else %}
         <div class="container-fluid pt-5 pb-3">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
-            <span class="bg-secondary pr-3">Нічого не знайдено</span>
+            <span class="bg-secondary pr-3">{% trans 'Нічого не знайдено' %}</span>
         </h2>
         </div>
 

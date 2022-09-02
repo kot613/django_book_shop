@@ -6,4 +6,4 @@ class SearchForm(forms.ModelForm):
 
     class Meta:
         fields = ('email',)
-        widgets = {'email': forms.TextInput(attrs={'class': "form-control", 'placeholder': "Ваша e-пошта"})}
+        widgets = {'email': forms.TextInput(attrs={'class': "form-control"})}
