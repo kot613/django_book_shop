@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Книгарня' %} :: {% trans 'Авторизація' %}{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span
+                class="bg-secondary pr-3">{% trans 'Авторизація' %}</span></h2>
+        <div class="row px-xl-5">
+            <div class="col-lg-7 mb-5">
+                <div class="contact-form bg-light p-30">
+                    <div id="success"></div>
+
+                    <form method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+
+                        {% for f in form %}
+                            <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}</p>
+                            <div class="form-error">{{ f.errors }}</div>
+                        {% endfor %}
+
+                        <div>
+                            <button class="btn btn-primary py-2 px-4" type="submit">{% trans 'Увійти' %}</button>
+                        </div>
+                    </form>
+                </div>
+                {% trans 'Не зареєстрований?' %}
+                <button class="btn btn-primary py-2 px-4" onclick="location.href='{% url 'register' %}'">
+                    {% trans 'Зареєструватися' %}
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

@@ -8,11 +8,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('newsletter/', include('newsletter.urls')),
     path('basket/', include('basket.urls')),
+    path('users/', include('users.urls')),
     path('', include('ebook.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
 ]
 
 urlpatterns += i18n_patterns(
+    path('users/', include('users.urls')),
     path('newsletter/', include('newsletter.urls')),
     path('basket/', include('basket.urls')),
     path('', include('ebook.urls')),

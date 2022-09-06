@@ -4,7 +4,7 @@
 {% block content %}
     <!-- Products Start -->
     <div class="container-fluid pt-5 pb-3">
-    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Книжки</span>
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">{% trans 'Книжки' %}</span>
     </h2>
     <div class="row px-xl-5">
         {% for book in book_list %}
@@ -13,14 +13,12 @@
                     <div class="product-img position-relative overflow-hidden">
                         <a href="{{ book.get_absolute_url }}"><img class="img-fluid w-100" src="{{ book.image.url }}"
                                                                    alt="{{ book.name }}"></a>
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href="{% url 'add_basket' book.id %}"><i class="fa fa-shopping-cart"></i></a>
-                        </div>
+
                     </div>
                     <div class="text-center py-4">
                         <hr>
                         <a class="h6 text-decoration-none text-truncate"
-                           href="{{ book.author.get_absolute_url }}">{{ book.author }}
+                           href="{{ book.get_absolute_url }}">{{ book.author }}
                             <hr>
                             <a class="h6 text-decoration-none text-truncate"
                                href="{{ book.get_absolute_url }}">{{ book.name|truncatechars:32 }}</a>

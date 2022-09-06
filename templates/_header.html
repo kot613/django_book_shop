@@ -78,13 +78,23 @@
         <div class="col-lg-4 text-center text-lg-right">
             <div class="d-inline-flex align-items-center">
                 <div class="btn-group">
+                {% if request.user.is_authenticated %}
+                     <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">
+                        {{ user.username }}
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <button class="dropdown-item" type="button" onclick="location.href='{% url 'logout' %}'">{% trans 'Вийти' %}</button>
+                    </div>
+
+                {% else %}
                     <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">
                         {% trans 'Мій аккаунт' %}
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <button class="dropdown-item" type="button">{% trans 'Війти' %}</button>
-                        <button class="dropdown-item" type="button">{% trans 'Вийти' %}</button>
+                        <button class="dropdown-item" type="button" onclick="location.href='{% url 'login' %}'">{% trans 'Увійти' %}</button>
                     </div>
+
+                {% endif %}
                 <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">{% trans 'Мова' %}
                     </button>

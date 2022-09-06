@@ -1,6 +1,5 @@
 from django import forms
 from .models import Newsletter
-from django.utils.translation import gettext as _
 
 
 class EmailForm(forms.ModelForm):

@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator
 from django.db import models
 from django.urls import reverse
@@ -91,7 +92,7 @@ class Book(models.Model):
 
 
 class Comment(models.Model):
-    name = models.CharField(max_length=50, verbose_name="Им'я")
+    name = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.TextField(max_length=500, verbose_name='Відгук')
     create_at = models.DateTimeField(auto_now_add=True)
     rating = models.FloatField(default=2)

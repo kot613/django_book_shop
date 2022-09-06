@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'ebook.apps.EbookConfig',
     'newsletter.apps.NewsletterConfig',
     'basket.apps.BasketConfig',
+    'users.apps.UsersConfig',
 
 
 ]

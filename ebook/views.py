@@ -1,5 +1,9 @@
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
+from django.utils.decorators import method_decorator
+from django.views.decorators.http import require_http_methods
 from django.views.generic import ListView, DetailView, CreateView
 from django.db.models import Q
 from .models import Book, Author, Comment
@@ -57,12 +61,14 @@ class SearchResultsView(ListView):
         return object_list
 
 
-class CreateComment(CreateView):
+class CreateComment(LoginRequiredMixin, CreateView):
     model = Comment
     form_class = CommentForm
 
-    def form_valid(self, form):
-        form.instance.post_id = self.kwargs.get('pk')
+    def form_valid(self, form, **kwargs):
+        print("self.kwargs", self.kwargs)
+        form.instance.post_id = self.kwargs['pk']
+        form.instance.name_id = self.request.user.id
         self.object = form.save()
         return super().form_valid(form)
 
