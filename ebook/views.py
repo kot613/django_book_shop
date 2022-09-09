@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views.decorators.http import require_http_methods
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, TemplateView
 from django.db.models import Q
 from .models import Book, Author, Comment
 from .forms import CommentForm
@@ -75,6 +75,18 @@ class CreateComment(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return self.object.post.get_absolute_url()
+
+
+class AboutView(TemplateView):
+    template_name = "ebook/about.html"
+
+
+class PaymentView(TemplateView):
+    template_name = "ebook/payment.html"
+
+
+class DeliveryView(TemplateView):
+    template_name = "ebook/delivery.html"
 
 
 

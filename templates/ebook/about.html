@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Книгарня' %} :: {% trans 'Про нас' %}{% endblock %}
+
+{% block content %}
+
+    <!-- About Detail Start -->
+    <div class="container-fluid pb-5">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <article class="col-main" role="main">
+                    <div id="cms-content" class="std">
+                        {% blocktranslate %}
+                        <p><strong>Книгарня – національна книжкова платформа<br></strong></p>
+                        <ul>
+                            <li>Понад 300 тисяч книжок 71 мовою у паперовому, електронному або аудіо форматах.</li>
+                            <li>Нашими послугами та продуктами користуються понад 3 млн клієнтів.</li>
+                            <li>Ми співпрацюємо з понад 500 українськими та закордонними видавництвами.</li>
+                        </ul>
+                        <p><strong>Місія Книгарнi</strong></p>
+                        <p>Наше призначення вийшло за межі продажу книжок:</p>
+                        <ul>
+                            <li>Ми популяризуємо читання.</li>
+                            <li>Ми підтримуємо українські видавництва та авторів.</li>
+                            <li>Ми розвиваємо українську книжку.</li>
+                        </ul>
+                        <p>Наша місія – зробити Україну найбільш читаючою країною в Європі.</p>
+                        {% endblocktranslate %}
+                    </div>
+                </article>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- About Detail End -->
+
+{% endblock %}
+
+
+
+
+
+

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-06 03:13+0300\n"
+"POT-Creation-Date: 2022-09-10 02:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,8 +78,9 @@ msgid "Наша адреса, Україна"
 msgstr "Our address, Ukraine"
 
 #: .\templates\_footer.html:29 .\templates\basket\detail.html:3
-#: .\templates\ebook\author.html:3 .\templates\ebook\book_detail.html:3
-#: .\templates\ebook\book_list.html:3 .\templates\ebook\search_results.html:3
+#: .\templates\ebook\about.html:3 .\templates\ebook\author.html:3
+#: .\templates\ebook\book_detail.html:5 .\templates\ebook\delivery.html:3
+#: .\templates\ebook\payment.html:3 .\templates\ebook\search_results.html:3
 #: .\templates\users\login.html:3 .\templates\users\register.html:3
 msgid "Книгарня"
 msgstr "Bookstore"
@@ -92,47 +93,66 @@ msgstr "All rights reserved."
 msgid "Вільний доступ"
 msgstr "Free access"
 
-#: .\templates\_header.html:10
-msgid "Книгарня -  інтернет-магазин книг."
-msgstr "Bookstore - online book store."
-
-#: .\templates\_header.html:11
-msgid "Купити книги в магазині за найкращими цінами в Україні"
-msgstr "Buy books in the store at the best prices in Ukraine"
-
-#: .\templates\_header.html:61 .\templates\_header.html:137
+#: .\templates\_header.html:23 .\templates\_header.html:99
 msgid "Книг"
 msgstr "Book"
 
-#: .\templates\_header.html:62 .\templates\_header.html:138
+#: .\templates\_header.html:24 .\templates\_header.html:100
 msgid "арня"
 msgstr "store"
 
-#: .\templates\_header.html:68
+#: .\templates\_header.html:30
 msgid "Шукати"
 msgstr "Search"
 
-#: .\templates\_header.html:86
+#: .\templates\_header.html:48
 msgid "Вийти"
 msgstr "Sign out"
 
-#: .\templates\_header.html:91
+#: .\templates\_header.html:53
 msgid "Мій аккаунт"
 msgstr "My account"
 
-#: .\templates\_header.html:94 .\templates\ebook\book_detail.html:206
-#: .\templates\users\login.html:24
+#: .\templates\_header.html:56 .\templates\ebook\book_detail.html:210
+#: .\templates\users\login.html:32
 msgid "Увійти"
 msgstr "Sign in"
 
-#: .\templates\_header.html:99 .\templates\ebook\book_detail.html:119
+#: .\templates\_header.html:61 .\templates\ebook\book_detail.html:123
 msgid "Мова"
 msgstr "Language"
 
-#: .\templates\_header.html:145 .\templates\basket\detail.html:11
-#: .\templates\ebook\author.html:13 .\templates\ebook\book_detail.html:12
+#: .\templates\_header.html:107 .\templates\basket\detail.html:11
+#: .\templates\ebook\author.html:13 .\templates\ebook\book_detail.html:16
 msgid "Головна"
 msgstr "Home"
+
+#: .\templates\_header.html:109
+msgid "Клієнту"
+msgstr "Klient"
+
+#: .\templates\_header.html:112 .\templates\ebook\payment.html:3
+msgid "Оплата"
+msgstr "Payment"
+
+#: .\templates\_header.html:113 .\templates\basket\detail.html:86
+#: .\templates\ebook\delivery.html:3
+msgid "Доставка"
+msgstr "Delivery"
+
+#: .\templates\_header.html:116
+#, fuzzy
+#| msgid "Книгарня"
+msgid "Про Книгарню"
+msgstr "About us"
+
+#: .\templates\base.html:10
+msgid "Книгарня -  інтернет-магазин книг."
+msgstr "Bookstore - online book store."
+
+#: .\templates\base.html:11
+msgid "Купити книги в магазині за найкращими цінами в Україні"
+msgstr "Buy books in the store at the best prices in Ukraine"
 
 #: .\templates\basket\detail.html:3
 msgid "Кошик"
@@ -164,7 +184,7 @@ msgstr "Remove"
 
 #: .\templates\basket\detail.html:43 .\templates\basket\detail.html:63
 #: .\templates\basket\detail.html:83 .\templates\basket\detail.html:87
-#: .\templates\basket\detail.html:93 .\templates\ebook\book_detail.html:58
+#: .\templates\basket\detail.html:93 .\templates\ebook\book_detail.html:62
 msgid "₴"
 msgstr "₴"
 
@@ -176,10 +196,6 @@ msgstr "Total in cart"
 msgid "Сума замовлення"
 msgstr "Order amount"
 
-#: .\templates\basket\detail.html:86
-msgid "Доставка"
-msgstr "Delivery"
-
 #: .\templates\basket\detail.html:92
 msgid "Разом"
 msgstr "Together"
@@ -188,96 +204,303 @@ msgstr "Together"
 msgid "Оформити замовлення"
 msgstr "To order"
 
-#: .\templates\ebook\author.html:3 .\templates\ebook\book_detail.html:103
+#: .\templates\ebook\about.html:3
+msgid "Про нас"
+msgstr "About us"
+
+#: .\templates\ebook\about.html:13
+msgid ""
+"\n"
+"                        <p><strong>Книгарня – національна книжкова "
+"платформа<br></strong></p>\n"
+"                        <ul>\n"
+"                            <li>Понад 300 тисяч книжок 71 мовою у "
+"паперовому, електронному або аудіо форматах.</li>\n"
+"                            <li>Нашими послугами та продуктами користуються "
+"понад 3 млн клієнтів.</li>\n"
+"                            <li>Ми співпрацюємо з понад 500 українськими та "
+"закордонними видавництвами.</li>\n"
+"                        </ul>\n"
+"                        <p><strong>Місія Книгарнi</strong></p>\n"
+"                        <p>Наше призначення вийшло за межі продажу книжок:</"
+"p>\n"
+"                        <ul>\n"
+"                            <li>Ми популяризуємо читання.</li>\n"
+"                            <li>Ми підтримуємо українські видавництва та "
+"авторів.</li>\n"
+"                            <li>Ми розвиваємо українську книжку.</li>\n"
+"                        </ul>\n"
+"                        <p>Наша місія – зробити Україну найбільш читаючою "
+"країною в Європі.</p>\n"
+"                        "
+msgstr ""
+"\n"
+" <p><strong>Bookstore - National Bookstore platform<br></strong></p>\n"
+" <ul>\n"
+" <li>Over 300,000 books in 71 languages ​​in in paper, electronic or audio "
+"formats.</li>\n"
+" <li>Our services and products are used over 3 million customers.</li>\n"
+" <li>We cooperate with more than 500 Ukrainian and by foreign publishers.</"
+"li>\n"
+" </ul>\n"
+" <p><strong>Mission Bookstore</strong></p>\n"
+" <p>Our purpose goes beyond selling books:</p>\n"
+" <ul>\n"
+" <li>We promote reading.</li>\n"
+" <li>We support Ukrainian publishing houses and authors.</li>\n"
+" <li>We are developing a Ukrainian book.</li>\n"
+" </ul>\n"
+" <p>Our mission is to make Ukraine the most reada country in Europe.</p>\n"
+" "
+
+#: .\templates\ebook\author.html:3 .\templates\ebook\book_detail.html:107
 msgid "Автор"
 msgstr "Author"
 
-#: .\templates\ebook\book_detail.html:3 .\templates\ebook\book_list.html:3
+#: .\templates\ebook\book_detail.html:5
 msgid "Детально"
 msgstr "In detail"
 
-#: .\templates\ebook\book_detail.html:55
+#: .\templates\ebook\book_detail.html:59
 msgid "Відгуки"
 msgstr "Reviews"
 
-#: .\templates\ebook\book_detail.html:61
+#: .\templates\ebook\book_detail.html:65
 msgid "Видавництво:"
 msgstr "Publisher:"
 
-#: .\templates\ebook\book_detail.html:66
+#: .\templates\ebook\book_detail.html:70
 msgid "Рік видання:"
 msgstr "Year of publication:"
 
-#: .\templates\ebook\book_detail.html:72
+#: .\templates\ebook\book_detail.html:76
 msgid "Купити"
 msgstr "Buy"
 
-#: .\templates\ebook\book_detail.html:82
+#: .\templates\ebook\book_detail.html:86
 msgid "Опис"
 msgstr "Description"
 
-#: .\templates\ebook\book_detail.html:84 .\templates\ebook\book_detail.html:99
+#: .\templates\ebook\book_detail.html:88 .\templates\ebook\book_detail.html:103
 msgid "Характеристики"
 msgstr "Characteristics"
 
-#: .\templates\ebook\book_detail.html:86
+#: .\templates\ebook\book_detail.html:90
 msgid "Коментарі"
 msgstr "Comments"
 
-#: .\templates\ebook\book_detail.html:91
+#: .\templates\ebook\book_detail.html:95
 msgid "Про книжку"
 msgstr "About the book"
 
-#: .\templates\ebook\book_detail.html:107
+#: .\templates\ebook\book_detail.html:111
 msgid "Видавництво"
 msgstr "Publishing house"
 
-#: .\templates\ebook\book_detail.html:111
+#: .\templates\ebook\book_detail.html:115
 msgid "Жанр"
 msgstr "Genre"
 
-#: .\templates\ebook\book_detail.html:123
+#: .\templates\ebook\book_detail.html:127
 msgid "Рік видання"
 msgstr "Year of publication"
 
-#: .\templates\ebook\book_detail.html:127
+#: .\templates\ebook\book_detail.html:131
 msgid "Кількість сторінок"
 msgstr "Number of pages"
 
-#: .\templates\ebook\book_detail.html:131
+#: .\templates\ebook\book_detail.html:135
 msgid "Формат"
 msgstr "Format"
 
-#: .\templates\ebook\book_detail.html:149
+#: .\templates\ebook\book_detail.html:153
 msgid "Відгук на"
 msgstr "Reviews for"
 
-#: .\templates\ebook\book_detail.html:176
+#: .\templates\ebook\book_detail.html:180
 msgid "Залиште відгук"
 msgstr "Leave a review"
 
-#: .\templates\ebook\book_detail.html:178
+#: .\templates\ebook\book_detail.html:182
 msgid "Ваш рейтинг * :"
 msgstr "Your rating * :"
 
-#: .\templates\ebook\book_detail.html:191
+#: .\templates\ebook\book_detail.html:195
 msgid "Ваш відгук *"
 msgstr "Your review *"
 
-#: .\templates\ebook\book_detail.html:198
+#: .\templates\ebook\book_detail.html:202
 msgid "Залишити відгук"
 msgstr "Leave a review"
 
-#: .\templates\ebook\book_detail.html:205
-#, fuzzy
-#| msgid "Залишити відгук"
+#: .\templates\ebook\book_detail.html:209
 msgid "Авторизуйтесь, щоб залишити відгук"
 msgstr "Sign in to leave a review"
 
-#: .\templates\ebook\book_list.html:7
+#: .\templates\ebook\book_list.html:6
 msgid "Книжки"
 msgstr "Books"
 
+#: .\templates\ebook\delivery.html:15
+msgid ""
+"\n"
+"                            <p><span>Працюємо без свят і вихідних! Клієнти з "
+"України можуть отримати замовлення протягом\n"
+"                                5-6 днів, в залежності від місцезнаходження "
+"населеного пункту і обраного способу\n"
+"                                доставки. Доставка можлива в ті населені "
+"пункти, де працюють відділення Нової пошти чи\n"
+"                                Укрпошти.&nbsp;Замовлення на суму понад 500 "
+"грн з доставкою у відділення\n"
+"                                Укрпошти доставляються безкоштовно*. "
+"Доступні способи, точні терміни та вартість\n"
+"                                доставки ви можете побачити під час "
+"оформлення замовлення в кошику замовлення,\n"
+"                                після вибору міста доставки.</span>\n"
+"                            </p>\n"
+"                            <p><em>*Доставка здійснюється за рахунок "
+"підприємства.</em></p>\n"
+"                            <p><strong><em>Ми щодня працюємо для вас – 24/7."
+"&nbsp;Незважаючи на воєнний стан, робимо все\n"
+"                                від себе залежне, щоб виконати всі "
+"замовлення вчасно.</em></strong></p>\n"
+"                            <h3><strong>Комплектація і цілісність товару</"
+"strong></h3>\n"
+"                            <ul>\n"
+"                                <li>Будь ласка, перевіряйте комплектацію, "
+"цілісність упаковки, відсутність механічних\n"
+"                                    пошкоджень і документи при отриманні "
+"замовлення. Це можливо зробити при працівниках\n"
+"                                    служби доставки.\n"
+"                                </li>\n"
+"\n"
+"                                <li>Ми не несемо відповідальності за товар, "
+"який не був перевірений на наявність\n"
+"                                    механічних пошкоджень або відсутність "
+"частин безпосередньо при отриманні у\n"
+"                                    відділенні перевізника.\n"
+"                                </li>\n"
+"\n"
+"                                <li>У разі виявлення некомплекту або "
+"пошкоджень, ви маєте право не оплачувати товар і\n"
+"                                    відмовитися від його отримання.\n"
+"                                </li>\n"
+"                            </ul>\n"
+"                        "
+msgstr ""
+"\n"
+" <p><span>We work without holidays and weekends! Clients from "
+"Ukraine can receive orders within\n"
+"5-6 days, depending on the location"
+"locality and chosen method\n"
+" delivery. Delivery is possible in those populated areas "
+"points where Nova Poshta branches work\n"
+"Ukrposhty. Orders over 500"
+"UAH with delivery to the branch\n"
+"Ukrposhty delivers free of charge*."
+"Available methods, exact timing and cost\n"
+" delivery you can see during "
+"checkout in the order basket,\n"
+" after choosing the delivery city.</span>\n"
+" </p>\n"
+" <p><em>*Delivery is carried out at the expense of "
+"enterprises.</em></p>\n"
+" <p><strong><em>We work for you every day - 24/7."
+"Despite martial law, we do everything\n"
+"it's up to you to do it all"
+"order on time.</em></strong></p>\n"
+" <h3><strong>Package and integrity of the product</"
+"strong></h3>\n"
+" <ul>\n"
+" <li>Please check the package, "
+"integrity of packaging, absence of mechanical\n"
+"damages and documents upon receipt"
+"order. This can be done with employees\n"
+" delivery services.\n"
+" </li>\n"
+"\n"
+" <li>We are not responsible for the product, "
+"which has not been checked for\n"
+"mechanical damage or absence"
+"parts directly upon receiving y\n"
+" office of the carrier.\n"
+" </li>\n"
+"\n"
+" <li>If an incomplete set is detected or "
+"damage, you have the right not to pay for the product and\n"
+" refuse to receive it.\n"
+" </li>\n"
+" </ul>\n"
+" "
+#: .\templates\ebook\payment.html:13
+msgid ""
+"\n"
+"                            <h3><strong>Оплата онлайн</strong></h3>\n"
+"                            <p>Для оплати замовлень онлайн – виберіть при "
+"оформленні замовлення спосіб оплати: Оплата\n"
+"                                онлайн. Після підтвердження замовлення ви "
+"потрапите на сайт платіжної системи, де\n"
+"                                необхідно буде ввести реквізити платіжної "
+"карти і пройти верифікацію за допомогою\n"
+"                                SMS-повідомлення. Якщо з будь-яких причин "
+"платіжна система не приймає оплату картою, ви\n"
+"                                автоматично повернетесь на сайт yakaboo.ua, "
+"де зможете вибрати інший спосіб оплати.</p>\n"
+"                            <p><strong>Спосіб онлайн оплати <a href="
+"\"https://wayforpay.com/uk\"\n"
+"                                                               target="
+"\"_blank\">WayForPay</a></strong></p>\n"
+"                            <h3><strong>Готівкою / карткою<br></strong></"
+"h3>\n"
+"                            <p>\n"
+"                                <span>Покупку можна оплатити готівкою або "
+"карткою при доставці замовлення на поштове\n"
+"                                    відділення. До кожного замовлення "
+"додається товарний чек.</span>\n"
+"                            </p>\n"
+"                            <h3><strong>Банківським переказом</strong></h3>\n"
+"                            <p>Якщо ви вирішили оплатити замовлення за "
+"допомогою банківського переказу, то під час\n"
+"                                оформлення замовлення вам необхідно вказати "
+"форму оплати «Банківський переказ». Коли\n"
+"                                замовлення буде оформлене, наш менеджер "
+"зв'яжеться з вами для підтвердження замовлення\n"
+"                                та відправлення рахунку.</p>\n"
+"                        "
+msgstr ""
+"\n"
+" <h3><strong>Pay online</strong></h3>\n"
+" <p>To pay for orders online - select at "
+"order processing payment method: Payment\n"
+" online. After confirming the order, you "
+"get to the site of the payment system, where\n"
+"it will be necessary to enter the payment details"
+"cards and verify with\n"
+" SMS message. If for any reason "
+"payment system does not accept payment by card, you\n"
+" will automatically return to the yakaboo.ua website, "
+"where you can choose another payment method.</p>\n"
+" <p><strong>Method of online payment <a href="
+"\"https://wayforpay.com/uk\"\n"
+"target="
+"\"_blank\">WayForPay</a></strong></p>\n"
+" <h3><strong>Cash / card<br></strong></"
+"h3>\n"
+" <p>\n"
+" <span>Purchase can be paid in cash or "
+"by card upon delivery of an order to the post office\n"
+" department. For each order "
+"the sales receipt is attached.</span>\n"
+" </p>\n"
+" <h3><strong>By bank transfer</strong></h3>\n"
+" <p>If you decide to pay for the order by "
+"with the help of a bank transfer, then during\n"
+"you need to specify when placing an order"
+"payment form Bank transfer. When\n"
+"the order will be processed, our manager"
+"will contact you to confirm your order\n"
+" and sending the bill.</p>\n"
+" "
 #: .\templates\ebook\search_results.html:3
 msgid "Пошук"
 msgstr "Search"
@@ -312,11 +535,11 @@ msgstr "Follow us"
 msgid "Авторизація"
 msgstr "Authorization"
 
-#: .\templates\users\login.html:28
+#: .\templates\users\login.html:36
 msgid "Не зареєстрований?"
 msgstr "Not registered?"
 
-#: .\templates\users\login.html:30
+#: .\templates\users\login.html:38
 msgid "Зареєструватися"
 msgstr "Registration"
 

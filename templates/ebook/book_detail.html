@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load i18n static %}
-{% block title %}{% trans 'Книгарня' %} :: {% trans 'Детально' %} :: {{ book.name }}{% endblock %}
+
+{% block title %}
+    {% trans 'Книгарня' %} :: {% trans 'Детально' %} :: {{ book.name }}
+{% endblock %}
+
 {% block content %}
 
 

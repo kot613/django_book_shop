@@ -1,42 +1,4 @@
 {% load static i18n %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <link href="{% static 'ebook/img/favicon.png' %}" rel="icon">
-    <title>
-        {% block title %}
-            {% if title %}{{ title }}{% else %} {% trans 'Книгарня -  інтернет-магазин книг.' %}
-                {% trans 'Купити книги в магазині за найкращими цінами в Україні' %}{% endif %}
-        {% endblock %}
-    </title>
-
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="Книгарня -  інтернет-магазин книг. Купити книги в магазині за найкращими цінами в Україні"
-          name="description">
-    <meta name="robots" content="INDEX,FOLLOW"/>
-
-    <!-- Favicon -->
-
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="{% static 'ebook/lib/animate/animate.min.css' %}" rel="stylesheet">
-    <link href="{% static 'ebook/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="{% static 'ebook/css/style.css' %}" rel="stylesheet">
-</head>
-
-<body>
 
 <!-- Topbar Start -->
 <div class="container-fluid">
@@ -143,15 +105,15 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="{% url 'home' %}" class="nav-item nav-link active">{% trans 'Головна' %}</a>
-                        <a href="shop.html" class="nav-item nav-link">Shop</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{% trans 'Клієнту' %} <i
                                     class="fa fa-angle-down mt-1"></i></a>
                             <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                                <a href="checkout.html" class="dropdown-item">Checkout</a>
+                                <a href="{% url 'payment' %}" class="dropdown-item">{% trans 'Оплата' %}</a>
+                                <a href="{% url 'delivery' %}" class="dropdown-item">{% trans 'Доставка' %}</a>
                             </div>
                         </div>
+                        <a href="{% url 'about' %}" class="nav-item nav-link">{% trans 'Про нас' %}</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
 
