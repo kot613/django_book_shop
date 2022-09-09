@@ -15,10 +15,18 @@
                     <form method="post" action="{% url 'login' %}">
                         {% csrf_token %}
 
-                        {% for f in form %}
-                            <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}</p>
-                            <div class="form-error">{{ f.errors }}</div>
+                        {% for field in form %}
+                            <p><label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}: </label>
+                                {{ field }}</p>
                         {% endfor %}
+
+                        {% if form.errors %}
+                            {% for error in form.non_field_errors %}
+                                <div class="form-error">
+                                    {{ error|escape }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
 
                         <div>
                             <button class="btn btn-primary py-2 px-4" type="submit">{% trans 'Увійти' %}</button>
@@ -32,8 +40,4 @@
             </div>
         </div>
     </div>
-
-
-
-
 {% endblock %}

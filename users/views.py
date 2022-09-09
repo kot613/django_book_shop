@@ -15,9 +15,14 @@ class RegisterUser(CreateView):
 class LoginUser(LoginView):
     form_class = LoginUserForm
     template_name = 'users/login.html'
+    next_page = 'home'
 
-    def get_success_url(self):
-        return reverse_lazy('home')
+    def form_invalid(self, form):
+        """If the form is invalid, render the invalid form."""
+        print(form.errors)
+        print(type(form.errors))
+        print(type(form.errors['__all__']))
+        return self.render_to_response(self.get_context_data(form=form))
 
 
 def logout_user(request):

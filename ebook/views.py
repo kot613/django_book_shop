@@ -51,13 +51,14 @@ class SearchResultsView(ListView):
     def get_queryset(self):
         object_list = []
         query = self.request.GET.get('q')
-        object_list.append(Book.objects.filter(Q(name__icontains=query) |
-                                               Q(description__icontains=query) |
-                                               Q(year__icontains=query)))
-        object_list.append(Author.objects.filter(Q(name__icontains=query) |
-                                                 Q(description__icontains=query)))
+        if query:
+            object_list.append(Book.objects.filter(Q(name__icontains=query) |
+                                                   Q(description__icontains=query) |
+                                                   Q(year__icontains=query)))
+            object_list.append(Author.objects.filter(Q(name__icontains=query) |
+                                                     Q(description__icontains=query)))
         # object_list.append(Publication.objects.filter(Q(name__icontains=query)))
-        object_list = [x for x in object_list if x]
+            object_list = [x for x in object_list if x]
         return object_list
 
 
