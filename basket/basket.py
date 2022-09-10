@@ -55,8 +55,3 @@ class Basket(object):
     def get_total_quantity(self):
         # отримуємо загальну вартість
         return sum(int(item['quantity']) for item in self.basket.values())
-
-    # def clear(self):
-    #     # видаляємо кошик з сесії
-    #     del self.session[settings.CART_SESSION_ID]
-    #     self.save()

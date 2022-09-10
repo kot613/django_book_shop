@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import basket_add, basket_remove, basket_detail
+from .basket import Basket
 
 urlpatterns = [
     path('', basket_detail, name='detail_basket'),

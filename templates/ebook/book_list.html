@@ -3,7 +3,8 @@
 {% block content %}
     <!-- Products Start -->
     <div class="container-fluid pt-5 pb-3">
-    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">{% trans 'Книжки' %}</span>
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span
+            class="bg-secondary pr-3">{% trans 'Книжки' %}</span>
     </h2>
     <div class="row px-xl-5">
         {% for book in book_list %}
@@ -25,19 +26,12 @@
                             <div class="d-flex align-items-center justify-content-center mt-2">
                                 <h5>₴{{ book.price }}</h5>
                             </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small>(5)</small>
-                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         {% endfor %}
-
+    </div>
     </div>
     <!-- Products End -->
 {% endblock %}
