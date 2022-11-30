@@ -55,3 +55,5 @@ class Basket(object):
     def get_total_quantity(self):
         # отримуємо загальну вартість
         return sum(int(item['quantity']) for item in self.basket.values())
+
+

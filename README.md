@@ -17,9 +17,9 @@ mkvirtualenv --no-site-packages {{ project_name }}-env
 
 #### For virtualenv ####
 ```bash
-virtualenv --no-site-packages {{ project_name }}-env
-cd {{ project_name }}-env
-source bin/activate
+python -m venv venv
+venv/bin/activate
+venv\Scripts\activate
 ```
 
 ### Clone the code ###

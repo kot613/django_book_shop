@@ -35,7 +35,7 @@
                     {% for item in basket %}
                         {% with product=item.product %}
                             <tr>
-                                <td class="align-middle">
+                                <td class="align-left">
                                     <img src="{% if product.image %}{{ product.image.url }}
                                         {% else %}{% static 'img/no_image.png' %}
                                         {% endif %}" alt="{{ product.name }}" style="width: 50px;">{{ product.name }}
@@ -82,18 +82,9 @@
                             <h6>{% trans 'Сума замовлення' %}</h6>
                             <h6>{% trans '₴' %} {{ basket.get_total_price }}</h6>
                         </div>
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-medium">{% trans 'Доставка' %}</h6>
-                            <h6 class="font-weight-medium">{% trans '₴' %} 0</h6>
-                        </div>
                     </div>
                     <div class="pt-2">
-                        <div class="d-flex justify-content-between mt-2">
-                            <h5>{% trans 'Разом' %}</h5>
-                            <h5>{% trans '₴' %} {{ basket.get_total_price }}</h5>
-                        </div>
-                        <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">{% trans 'Оформити замовлення' %}
-                        </button>
+                        <a href="{% url 'checkout' %}" class="btn btn-block btn-primary font-weight-bold my-3 py-3" role="button">{% trans 'Оформити замовлення' %}</a>
                     </div>
                 </div>
             </div>
