@@ -18,4 +18,8 @@ class Order(models.Model):
     def __str__(self):
         return self.order
 
+    class Meta:
+        verbose_name = 'Замовлення'
+        verbose_name_plural = 'Замовлення'
+
 

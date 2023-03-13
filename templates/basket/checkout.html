@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% block title %}{% trans 'Книгарня' %} :: {% trans 'Замовити' %}{% endblock %}
+{% block content %}
+
+<!-- Breadcrumb Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-light mb-30">
+                    <a class="breadcrumb-item text-dark" href="{% url 'home' %}">{% trans 'Головна' %}</a>
+                    <span class="breadcrumb-item active">{% trans 'Ваш заказ' %}</span>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+
+
+    <form action="{% url 'done' %}" method="post" class="col-12">
+        <div class="container-fluid">
+            <div class="row px-xl-5">
+                {% csrf_token %}
+                {% if user.is_authenticated %}
+                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                {% else %}
+                    <input type="hidden" name="user_id" value="0">
+                {% endif %}
+{% if user.is_authenticated %}
+                <div class="col-lg-8">
+                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">{% trans 'Оформлення замовлення' %}</span>
+                    </h5>
+                    <div class="bg-light p-30 mb-5">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label>{% trans 'Фамілія' %}</label>
+                                <input class="form-control" name="last_name" type="text"
+                                       placeholder="{% trans 'Бандера' %}" value="{{ user.last_name }}" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>{% trans "Ім'я" %}</label>
+                                <input class="form-control" name="first_name" type="text"
+                                       placeholder="{% trans 'Степан' %}" value="{{ user.first_name }}" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>{% trans 'Телефон' %}</label>
+                                <input class="form-control" name="phone" type="text" placeholder="066 555 5555" value="{{ user.phone }}" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>{% trans 'E-mail' %}</label>
+                                <input class="form-control" name="email" type="text" placeholder="example@email.com" value="{{ user.email }}" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="section-title position-relative text-uppercase mb-3"><span
+                            class="bg-secondary pr-3">{% trans 'Доставка' %}</span></h5>
+                    <div class="bg-light p-30 mb-5">
+                        <div class="row">
+
+                            <div class="col-md-6 form-group">
+                                <label>{% trans 'Місто' %}</label>
+                                <input class="form-control" name="city" type="text" placeholder="{% trans 'Харків' %}" required>
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label>{% trans 'Адреса' %}</label>
+                                <input class="form-control" name="address" type="text"
+                                       placeholder="{% trans 'вул. Героїв Харкова, 123' %}" required>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+{% endif %}
+                <div class="col-lg-4">
+                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">{% trans 'ВСЬОГО У КОШИКУ' %}</span>
+                    </h5>
+                    <div class="bg-light p-30 mb-5">
+                        <div class="border-bottom">
+                            <h6 class="mb-3">{% trans 'Назва' %}</h6>
+                            {% for item in basket %}
+                                <div class="d-flex justify-content-between">
+                                    <p>{{ item.product }}</p>
+                                    <p>{{ item.price }}</p>
+                                </div>
+                            {% endfor %}
+                             <input type="hidden" name="order" value="{{ request.session.ID_SESSION }}">
+                        </div>
+<!--                        <div class="border-bottom pt-3 pb-2">-->
+<!--                            <div class="d-flex justify-content-between">-->
+<!--                                <h6 class="font-weight-medium">{% trans 'Доставка' %}</h6>-->
+<!--                                <h6 class="font-weight-medium">100</h6>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="pt-2">
+                            <div class="d-flex justify-content-between mt-2">
+                                <h5>{% trans 'Всьго' %}</h5>
+                                <h5>{{ basket.get_total_price }} ₴</h5>
+                                <input type="hidden" name="price" value="{{ basket.get_total_price|add:'100' }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <h5 class="section-title position-relative text-uppercase mb-3"><span
+                                class="bg-secondary pr-3">{% trans 'Оплата' %}</span></h5>
+                        <div class="bg-light p-30">
+                            <div class="form-group">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" name="payment" id="paypal">
+                                    <label class="custom-control-label"
+                                           for="paypal">{% trans 'Оплатити онлайн' %}</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" name="payment"
+                                           id="directcheck" value="no">
+                                    <label class="custom-control-label"
+                                           for="directcheck">{% trans 'Оплатити потім' %}</label>
+                                </div>
+                            </div>
+                            <input type="submit" value="{% trans 'Замовити' %}" class="btn btn-block btn-primary
+                                   font-weight-bold my-3 py-3">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+    <!-- Checkout End -->
+
+{% endblock %}
+
+
