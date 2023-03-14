@@ -30,8 +30,7 @@ class Basket(object):
         # Додаємо товар у кошик чи оновлюємо його кількість.
         product_id = str(product.id)
         if product_id not in self.basket:
-            self.basket[product_id] = {'quantity': 0,
-                                     'price': str(product.price)}
+            self.basket[product_id] = {'quantity': 0, 'price': str(product.price)}
         self.basket[product_id]['quantity'] += quantity
         if not self.basket[product_id]['quantity']:
             del self.basket[product_id]
@@ -55,5 +54,3 @@ class Basket(object):
     def get_total_quantity(self):
         # отримуємо загальну вартість
         return sum(int(item['quantity']) for item in self.basket.values())
-
-

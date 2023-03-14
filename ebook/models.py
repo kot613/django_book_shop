@@ -60,7 +60,8 @@ class Book(models.Model):
     """ модель книги """
     name = models.CharField(max_length=255, db_index=True, verbose_name='Назва')
     author = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name='Автор')
-    publication = models.ForeignKey(Publication, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Видавництво')
+    publication = models.ForeignKey(Publication, on_delete=models.SET_NULL,
+                                    null=True, blank=True, verbose_name='Видавництво')
     genres = models.ManyToManyField(Genre, verbose_name='Жанри', related_name='book_genre')
     year = models.PositiveSmallIntegerField(default=2022, verbose_name='Рік видання')
     num_page = models.PositiveSmallIntegerField(default=200, verbose_name='Кількість сторінок')
@@ -100,5 +101,3 @@ class Comment(models.Model):
     class Meta:
         verbose_name = 'Відгук'
         verbose_name_plural = 'Відгуки'
-
-

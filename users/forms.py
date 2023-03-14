@@ -7,7 +7,8 @@ from django.utils.translation import gettext_lazy as _
 class RegisterUserForm(UserCreationForm):
     username = forms.CharField(label=_('Логін'), widget=forms.TextInput(attrs={'class': 'form-control'}))
     password1 = forms.CharField(label=_('Пароль'), widget=forms.PasswordInput(attrs={'class': 'form-control'}))
-    password2 = forms.CharField(label=_('Повторити пароль'), widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    password2 = forms.CharField(label=_('Повторити пароль'),
+                                widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
     class Meta:
         model = User

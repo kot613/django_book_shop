@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 
 class Order(models.Model):
@@ -21,5 +20,3 @@ class Order(models.Model):
     class Meta:
         verbose_name = 'Замовлення'
         verbose_name_plural = 'Замовлення'
-
-

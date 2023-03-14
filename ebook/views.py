@@ -1,9 +1,5 @@
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
-from django.utils.decorators import method_decorator
-from django.views.decorators.http import require_http_methods
 from django.views.generic import ListView, DetailView, CreateView, TemplateView
 from django.db.models import Q
 from .models import Book, Author, Comment
@@ -52,12 +48,11 @@ class SearchResultsView(ListView):
         object_list = []
         query = self.request.GET.get('q')
         if query:
-            object_list.append(Book.objects.filter(Q(name__icontains=query) |
-                                                   Q(description__icontains=query) |
-                                                   Q(year__icontains=query)))
-            object_list.append(Author.objects.filter(Q(name__icontains=query) |
-                                                     Q(description__icontains=query)))
-        # object_list.append(Publication.objects.filter(Q(name__icontains=query)))
+            filt = Book.objects.filter(
+                Q(name__icontains=query) | Q(description__icontains=query) | Q(year__icontains=query)
+            )
+            object_list.append(filt)
+            object_list.append(Author.objects.filter(Q(name__icontains=query) | Q(description__icontains=query)))
             object_list = [x for x in object_list if x]
         return object_list
 
@@ -87,6 +82,3 @@ class PaymentView(TemplateView):
 
 class DeliveryView(TemplateView):
     template_name = "ebook/delivery.html"
-
-
-

@@ -61,8 +61,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,7 +135,11 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-gettext = lambda s: s
+
+def gettext(s):
+    return s
+
+
 LANGUAGES = (
     ('uk', gettext('Ukraine')),
     ('en', gettext('English')),
@@ -144,7 +147,3 @@ LANGUAGES = (
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, "locale"),
 ]
-
-
-
-
